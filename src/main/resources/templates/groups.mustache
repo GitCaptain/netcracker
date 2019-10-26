@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>choose group</title>
+</head>
+<body>
+
+    <div>
+        <form method="post">
+            <input type="text" name="groupName" placeholder="Название группы">
+            <button type="submit">Создать</button>
+        </form>
+    </div>
+
+    <div>
+    {{#Groups}}
+        <b> {{id}}: </b>
+        <b> {{name}}</b>>
+    {{/Groups}}
+    </div>
+</body>
+</html>

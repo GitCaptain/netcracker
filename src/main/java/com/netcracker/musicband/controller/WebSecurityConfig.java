@@ -1,4 +1,5 @@
-package controller;
+/*
+package com.netcracker.musicband.controller;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,3 +42,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new InMemoryUserDetailsManager(user);
     }
 }
+*/
