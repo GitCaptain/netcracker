@@ -7,16 +7,16 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Group {
+public class MusicBand {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String groupName;
     private Date createDate;
 
-    public Group(){}
+    public MusicBand(){}
 
-    public Group(String groupName, Date createDate) {
+    public MusicBand(String groupName, Date createDate) {
         this.groupName = groupName;
         this.createDate = createDate;
     }
