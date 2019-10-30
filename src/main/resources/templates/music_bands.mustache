@@ -14,10 +14,12 @@
     </div>
 
     <div>
-    {{#Groups}}
-        <b> {{id}}: </b>
-        <b> {{name}}</b>>
-    {{/Groups}}
+    Список групп
+    <div>
+    {{#MusicBands}}
+        <b>{{id}}</b>: {{bandName}}, создана: {{createDate}} <br>
+    {{/MusicBands}}
+    </div>
     </div>
 </body>
 </html>

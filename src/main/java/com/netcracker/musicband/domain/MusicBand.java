@@ -11,13 +11,13 @@ public class MusicBand {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String groupName;
+    private String bandName;
     private Date createDate;
 
     public MusicBand(){}
 
-    public MusicBand(String groupName, Date createDate) {
-        this.groupName = groupName;
+    public MusicBand(String bandName, Date createDate) {
+        this.bandName = bandName;
         this.createDate = createDate;
     }
 
@@ -29,12 +29,12 @@ public class MusicBand {
         this.id = id;
     }
 
-    public String getGroupName() {
-        return groupName;
+    public String getBandName() {
+        return bandName;
     }
 
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
+    public void setBandName(String bandName) {
+        this.bandName = bandName;
     }
 
     public Date getCreateDate() {
