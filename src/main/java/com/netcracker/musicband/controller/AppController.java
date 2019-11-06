@@ -13,7 +13,6 @@ public class AppController {
         return "login";
     }
 
-
     @GetMapping("/main")
     public String main(Map<String, Object> model){
         return "main";

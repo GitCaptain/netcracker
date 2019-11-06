@@ -7,19 +7,24 @@
 <body>
 
     <div>
-        <form method="post">
+        <form action="/music_bands/add" method="post">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
             <input type="text" name="groupName" placeholder="Название группы">
             <button type="submit">Создать</button>
         </form>
     </div>
 
     <div>
-    Список групп
-    <div>
-    {{#MusicBands}}
-        <b>{{id}}</b>: {{bandName}}, создана: {{createDate}} <br>
-    {{/MusicBands}}
-    </div>
+    <br>Список групп<br>
+        <div>
+            {{#MusicBands}}
+            <form action="/music_bands/choose" method="post">
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                    <input type="hidden" name="id" value="{{id}}"/>
+                    <button type="submit"> {{bandName}} </button> создана: {{createDate}} <br><br>
+            </form>
+            {{/MusicBands}}
+        </div>
     </div>
 </body>
 </html>

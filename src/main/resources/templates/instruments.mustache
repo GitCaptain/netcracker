@@ -6,5 +6,26 @@
 </head>
 <body>
 
+<div>
+    <form action="/instruments/add" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="text" name="name" placeholder="Название инструмента">
+        <button type="submit">Создать</button>
+    </form>
+</div>
+
+<div>
+    <br>Список инструментов<br>
+
+    <div>
+        {{#instruments}}
+        <form action="instruments/choose" method="post">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                <input type="hidden" name="id" value="{{id}}"/>
+                <button type="submit"> {{name}} </button><br><br>
+        </form>
+        {{/instruments}}
+    </div>
+</div>
 </body>
 </html>

@@ -2,10 +2,7 @@ package com.netcracker.musicband.domain;
 
 import org.springframework.data.util.Pair;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Map;
 import java.util.Vector;
@@ -18,6 +15,8 @@ public class Track {
     private int id;
     private String name;
     private Date createDate;
+
+    @ElementCollection
     private Map<String, Vector<Pair<Character,Integer>>> track;
 
     public int getId() {

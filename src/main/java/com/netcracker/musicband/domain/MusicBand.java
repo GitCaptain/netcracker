@@ -44,4 +44,10 @@ public class MusicBand {
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
+
+    @Override
+    public String toString(){
+        return "name = " + bandName + ", create date = " + createDate;
+    }
+
 }

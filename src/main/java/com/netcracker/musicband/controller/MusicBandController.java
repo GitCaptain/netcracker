@@ -26,10 +26,16 @@ public class MusicBandController {
         return MUSIC_BAND_PATH;
     }
 
-    @PostMapping("/"+MUSIC_BAND_PATH)
+    @PostMapping("/" + MUSIC_BAND_PATH  + "/" + "choose")
+    public String chooseGroup(@RequestParam int id, Map<String, Object> model){
+        return "redirect:/instruments";
+    }
+
+    @PostMapping("/" + MUSIC_BAND_PATH + "/" + "add")
     public String createGroup(@RequestParam String groupName, Map<String, Object> model){
         MusicBand musicBand = new MusicBand(groupName, new Date());
         musicBandRepository.save(musicBand);
+        System.err.println("new musicBand added: " + musicBand);
         Iterable<MusicBand> groups = musicBandRepository.findAll();
         model.put(MUSIC_BAND, groups);
         return MUSIC_BAND_PATH;
