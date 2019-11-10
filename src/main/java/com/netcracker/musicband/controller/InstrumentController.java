@@ -2,6 +2,8 @@ package com.netcracker.musicband.controller;
 
 import com.netcracker.musicband.domain.Instrument;
 import com.netcracker.musicband.repository.InstrumentRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,9 @@ import java.util.Map;
 
 @Controller
 public class InstrumentController {
+
+    private final Logger logger = LogManager.getLogger(InstrumentController.class.getName());
+
 
     @Autowired
     private InstrumentRepository instrumentRepository;
@@ -32,6 +37,7 @@ public class InstrumentController {
     @PostMapping("/instruments/add")
     public String addInstruments(Instrument instrument, Map<String, Object> model){
         instrumentRepository.save(instrument);
+        logger.info("new instrument added: " + instrument);
         return "instruments";
     }
 }
